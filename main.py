@@ -27,7 +27,7 @@ target = dataset.iloc[:, 4].values
 
 
 # PCA function
-def PCA(X, y):
+def pca(X, y):
     # Flip train and test data
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=0)
 
@@ -47,11 +47,9 @@ def PCA(X, y):
 # Iris Data
 # data = datasets.load_iris()
 # X, y = data.data, data.target
-#
+# sc = StandardScaler()
 # X_train = sc.fit_transform(X)
-#
-# pca = PCA(n_components=2)
-#
+# pca = PCA()
 # X_train = pca.fit_transform(X)
 # y_train = y
 
@@ -71,10 +69,12 @@ while True:
         break
 
     # Flip to train and test and PCA data
-    (X_train, X_test, y_train, y_test) = PCA(feature, target)
-
+    (X_train, X_test, y_train, y_test) = pca(feature, target)
     # Choose train or test set
     (X_set, y_set) = (X_train, y_train) if check == 1 else (X_test, y_test)
+    # X_set = X_train
+    # y_set = y_train
+    print(X_train.shape)
 
     # Classified to contour data
     classifier = LogisticRegression(random_state=0)
