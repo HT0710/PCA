@@ -9,7 +9,7 @@ from bioinfokit.visuz import cluster
 raw_data = pd.read_csv("../Wage_data.csv")
 raw_data = raw_data.dropna()
 raw_data = raw_data.reset_index()
-# dataset = raw_data.loc[:,
+# dataset = RAW_DATA.loc[:,
 #           ['nearc4', 'educ', 'age', 'black', 'wage', 'IQ', 'married', 'exper', 'lwage', 'expersq']].copy()
 dataset = raw_data
 for i, j in zip([1000, 500, 5], range(3, 0, -1)):

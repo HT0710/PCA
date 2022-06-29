@@ -41,12 +41,12 @@ def pca(X, y):
 # X, y = data.data, data.target
 # sc = StandardScaler()
 # X_train = sc.fit_transform(X)
-# pca = PCA()
-# X_train = pca.fit_transform(X)
+# PCA = PCA()
+# X_train = PCA.fit_transform(X)
 # y_train = y
 
 # PCA variance ratio
-# per_var = np.round(pca.explained_variance_ratio_*100, decimals=1)
+# per_var = np.round(PCA.explained_variance_ratio_*100, decimals=1)
 # labels = ['PC' + str(x) for x in range(1, len(per_var)+1)]
 # plt.bar(x=range(1, len(per_var)+1), height=per_var, tick_label=labels)
 # plt.ylabel('Percentage of E V')
