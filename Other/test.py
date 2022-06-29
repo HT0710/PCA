@@ -6,7 +6,7 @@ from sklearn.preprocessing import StandardScaler
 from bioinfokit.analys import get_data
 from bioinfokit.visuz import cluster
 
-raw_data = pd.read_csv("Wage_data.csv")
+raw_data = pd.read_csv("../Wage_data.csv")
 raw_data = raw_data.dropna()
 raw_data = raw_data.reset_index()
 # dataset = raw_data.loc[:,
