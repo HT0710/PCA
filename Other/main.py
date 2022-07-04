@@ -1,5 +1,5 @@
 import numpy as np
-from data import read_data
+from data import load_data
 from matplotlib import pyplot as plt, cm
 from sklearn import datasets
 from sklearn.decomposition import PCA
@@ -7,7 +7,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 
-dataset = read_data("../Wage_data.csv").load_data()
+dataset = load_data("../Wage_data.csv")
 
 # Classify target
 for i, j in zip([1000, 500, 5], range(3, 0, -1)):
