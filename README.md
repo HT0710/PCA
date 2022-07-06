@@ -5,7 +5,7 @@ Principal Components Analysis
 ## Tài liệu
 
 - Repo chi tiết về PCA:
-https://github.com/learn-co-curriculum/dsc-performing-principal-component-analysis.git
+https://github.com/HT0710/dsc-performing-principal-component-analysis.git
 
 - main.py: Gọi 2 tập data gốc và sau khi PCA để test
 
