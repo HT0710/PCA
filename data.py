@@ -1,7 +1,8 @@
 import pandas as pd
-from sklearn import linear_model
+from sklearn.linear_model import LinearRegression
 from sklearn.decomposition import PCA
 from sklearn.preprocessing import StandardScaler
+from matplotlib import pyplot as plt
 
 
 def load_data(filename):
