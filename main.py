@@ -1,30 +1,39 @@
 from data import *
 
 filename = "Wage_data.csv"
-raw_data = load_data(filename)
-raw_data = raw_data.loc[:,
-           ['nearc4', 'educ', 'age', 'black', 'wage', 'IQ', 'married', 'exper']]
+dataset = load_data(filename)
+dataset = dataset.loc[:, ['nearc4', 'educ', 'age', 'black', 'wage', 'IQ', 'married', 'exper']]
+# print(dataset[dataset.wage > 1000]['wage'].count()/1600)
+# dataset = dataset.drop(dataset[dataset.wage > 1000].index)
+# print(dataset)
+X = dataset.loc[:, dataset.columns != 'wage'].values
+y = dataset['wage'].values
 
-pca_data = pca_data(raw_data)
-
-X = raw_data[['nearc4', 'educ', 'age', 'black', 'IQ', 'married', 'exper']]
-y = raw_data['wage']
-
-# test với 5 giá trị đầu
-X, y = X.head().values, y.head().values
 
 regr = linear_model.LinearRegression()
+
+
 regr.fit(X, y)
+# print(regr.coef_)
+
+# dự đoán giá id 1 với wage = 721
+print(dataset.loc[1:1], '\n')
+predict_values = regr.predict([[0, 12, 34, 0, 103, 1, 16]])[0]
+A = predict_values
+print("Before PCA")
+print(f"Predicted wage: {round(predict_values)}")
+print(f"Different: {round(abs(1-predict_values/721)*100, 2)}%")
 
 
-def predict(nearc4, educ, age, black, iq, married, exper):
-    value = regr.predict([[nearc4, educ, age, black, iq, married, exper]])
-    return round(value[0])
+X = pca_data(X)
+# print(X)
+regr.fit(X, y)
+# print(regr.coef_)
 
+predict_values = regr.predict([[2.79766258, -1.392667]])[0]
+print("\nAfter PCA")
+print(f"Predicted wage: {round(predict_values)}")
+print(f"Different: {round(abs(1-predict_values/721)*100, 2)}%")
 
-print(raw_data[:1])
-# dự đoán giá trị = với id 0
-print(f"\nPredicted wage: {predict(0, 12, 27, 0, 93, 1, 9)}")
-# kết quả = với id 0 => dự đoán chính xác
-
-print(f"\nPredicted wage: {predict(1, 16, 25, 0, 100, 0, 12)}")
+## So sánh tỉ lệ trước và sau khi PCA
+print(f"\nBefore vs After PCA: {round(abs(1-predict_values/A)*100, 2)}%")
