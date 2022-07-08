@@ -8,6 +8,9 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 
 dataset = load_data("../Wage_data.csv")
+dataset = dataset.loc[:,
+          ['nearc4', 'educ', 'age', 'black', 'wage', 'IQ', 'married', 'exper', 'lwage', 'expersq']].copy()
+
 
 # Classify target
 for i, j in zip([1000, 500, 5], range(3, 0, -1)):
@@ -20,7 +23,7 @@ target = dataset.iloc[:, 4].values
 
 # PCA function
 def pca(X, y):
-    # Flip train and test data
+    # Flip train and Linear_regression data
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=0)
 
     # Standardized data
@@ -60,9 +63,9 @@ while True:
     if check not in (1, 2):
         break
 
-    # Flip to train and test and PCA data
+    # Flip to train and Linear_regression and PCA data
     (X_train, X_test, y_train, y_test) = pca(feature, target)
-    # Choose train or test set
+    # Choose train or Linear_regression set
     (X_set, y_set) = (X_train, y_train) if check == 1 else (X_test, y_test)
     # X_set = X_train
     # y_set = y_train
