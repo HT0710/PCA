@@ -10,6 +10,7 @@ pca_data = pca_data(raw_data)
 X = raw_data[['nearc4', 'educ', 'age', 'black', 'IQ', 'married', 'exper']]
 y = raw_data['wage']
 
+# test với 5 giá trị đầu
 X, y = X.head().values, y.head().values
 
 regr = linear_model.LinearRegression()
