@@ -2,7 +2,9 @@
 Principal Components Analysis
 
 ## Hướng dẫn
-- Repo chi tiết về PCA:
+- Repo về Machine Learning: 
+https://github.com/HT0710/ML-From-Scratch.git
+- Repo chi tiết về PCA: 
 https://github.com/HT0710/dsc-performing-principal-component-analysis.git
 
 - main.py: Gọi 2 tập data gốc và sau khi PCA để test
