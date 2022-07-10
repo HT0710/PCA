@@ -2,7 +2,7 @@ from data import *
 
 filename = "Wage_data.csv"
 dataset = load_data(filename)
-dataset = dataset.loc[:, ['nearc4', 'educ', 'age', 'black', 'wage', 'IQ', 'exper']]
+dataset = dataset.loc[:, ['nearc4', 'educ', 'age', 'black', 'wage', 'IQ', 'exper', 'lwage']]
 
 X = dataset.loc[:, dataset.columns != 'wage'].values
 X_pca = pca_data(X)
@@ -33,7 +33,7 @@ class LR_PREDICT():
         print('-'*40)
         self.avr = round(self.avr / len(self.id_list), 1)
 
-
+# Số lượng dự đoán
 n = 5
 
 
