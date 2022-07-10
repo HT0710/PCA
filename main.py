@@ -3,37 +3,57 @@ from data import *
 filename = "Wage_data.csv"
 dataset = load_data(filename)
 dataset = dataset.loc[:, ['nearc4', 'educ', 'age', 'black', 'wage', 'IQ', 'married', 'exper']]
-# print(dataset[dataset.wage > 1000]['wage'].count()/1600)
-# dataset = dataset.drop(dataset[dataset.wage > 1000].index)
-# print(dataset)
+
 X = dataset.loc[:, dataset.columns != 'wage'].values
+X_pca = pca_data(X)
 y = dataset['wage'].values
-
-
 LR = LinearRegression()
 
 
-LR.fit(X, y)
-# print(LR.coef_)
+class LR_PREDICT():
+    def __init__(self, X, y, id_list):
+        self.X = X
+        self.y = y
+        self.id_list = id_list
+        self.avr = 0
 
-# dự đoán giá id 1 với wage = 721
-print(dataset.loc[1:1], '\n')
-pred = LR.predict([[0, 12, 34, 0, 103, 1, 16]])[0]
-print("Before PCA")
-print(f"Predicted wage: {round(pred)}")
-print(f"Different: {round(abs(1 - pred / 721) * 100, 2)}%")
+    def get_avr(self):
+        return self.avr
+
+    def gene(self, amount):
+        LR.fit(self.X, self.y)
+        i = 0
+        for id in self.id_list:
+            pred = round(LR.predict([self.X[id].tolist()])[0])
+            diff = round(abs(1 - (pred / self.y[id])) * 100, 1)
+            self.avr += diff
+
+            print(f"{i} | Predicted wage: {pred} | Diff: {diff}%")
+            i += 1
+        print('-'*40)
+        self.avr = round(self.avr / len(self.id_list), 1)
 
 
-X = pca_data(X)
-# print(X)
+n = 6
 
-LR.fit(X, y)
-# print(LR.coef_)
 
-pred_pca = LR.predict([[2.79766258, -1.392667]])[0]
-print("\nAfter PCA")
-print(f"Predicted wage: {round(pred_pca)}")
-print(f"Different: {round(abs(1 - pred_pca / 721) * 100, 2)}%")
+id_list = []
+for i in range(n):
+    id_list.append(random.randint(0, X.shape[0]))
+
+print("  Before PCA")
+nor_predict = LR_PREDICT(X, y, id_list)
+nor_predict.gene(n)
+nor_avr = nor_predict.get_avr()
+print(f"    Average Diff: {nor_avr}%")
+
+print()
+
+print("  After PCA")
+pca_predict = LR_PREDICT(X_pca, y, id_list)
+pca_predict.gene(n)
+pca_avr = pca_predict.get_avr()
+print(f"    Average Diff: {pca_avr}%")
 
 ## So sánh tỉ lệ trước và sau khi PCA
-print(f"\nBefore vs After PCA: {round(abs(1 - pred_pca / pred) * 100, 2)}%")
+print(f"\nBefore vs After PCA: {round(abs(pca_avr - nor_avr), 1)}%")
