@@ -2,7 +2,7 @@ from data import *
 
 filename = "Wage_data.csv"
 dataset = load_data(filename)
-dataset = dataset.loc[:, ['nearc4', 'educ', 'age', 'black', 'wage', 'IQ', 'married', 'exper']]
+dataset = dataset.loc[:, ['nearc4', 'educ', 'age', 'black', 'wage', 'IQ', 'exper']]
 
 X = dataset.loc[:, dataset.columns != 'wage'].values
 X_pca = pca_data(X)
@@ -20,7 +20,7 @@ class LR_PREDICT():
     def get_avr(self):
         return self.avr
 
-    def gene(self, amount):
+    def gene(self):
         LR.fit(self.X, self.y)
         i = 0
         for id in self.id_list:
@@ -34,7 +34,7 @@ class LR_PREDICT():
         self.avr = round(self.avr / len(self.id_list), 1)
 
 
-n = 6
+n = 5
 
 
 id_list = []
@@ -43,7 +43,7 @@ for i in range(n):
 
 print("  Before PCA")
 nor_predict = LR_PREDICT(X, y, id_list)
-nor_predict.gene(n)
+nor_predict.gene()
 nor_avr = nor_predict.get_avr()
 print(f"    Average Diff: {nor_avr}%")
 
@@ -51,9 +51,9 @@ print()
 
 print("  After PCA")
 pca_predict = LR_PREDICT(X_pca, y, id_list)
-pca_predict.gene(n)
+pca_predict.gene()
 pca_avr = pca_predict.get_avr()
 print(f"    Average Diff: {pca_avr}%")
 
-## So sánh tỉ lệ trước và sau khi PCA
+## Độ chênh lệch tỉ lệ trước và sau khi PCA
 print(f"\nBefore vs After PCA: {round(abs(pca_avr - nor_avr), 1)}%")
