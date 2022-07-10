@@ -11,6 +11,8 @@ https://github.com/HT0710/dsc-performing-principal-component-analysis.git
 
 - data.py: `load_data()` dùng xử lý đầu vào, `pca_data(dataset)` dùng để PCA
 
+- .history.csv: Ghi lại lịch sử các lần dự đoán
+
 ### Other
 Chứa các file test cũ để tham khảo
 
