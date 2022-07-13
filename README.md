@@ -7,11 +7,64 @@ https://github.com/HT0710/ML-From-Scratch.git
 - Repo chi tiết về PCA: 
 https://github.com/HT0710/dsc-performing-principal-component-analysis.git
 
-- main.py: Thực thi chương trình
+### main.py
+Setup data từ file data.py
 
-- data.py: `load_data()` dùng xử lý đầu vào, `pca_data(dataset)` dùng để PCA
+'''python
+X_train, X_test, X_pca_train, X_pca_test, y_train, y_test, feature = setup_data()
+LR = LinearRegression()
+'''
 
-- .history.csv: Ghi lại lịch sử các lần dự đoán
+Các lựa chọn để thực thi chương trình
+
+'''python
+n = 10
+plot = False
+his = False
+run_main = True
+'''
+
+- Hàm main random id từ tập test, sau đó train 2 tập model và dùng id từ tập test random lúc đầu để dự đoán
+- Lưu vào lịch sử
+- Show ảnh nếu plot = True
+- data.py: 'setup_data()' đầu vào cho main
+
+'''python
+def main():
+'''
+
+Object LR_PREDICT chứa các hàm dự đoán
+
+'''pyhon
+class LR_PREDICT:
+'''
+
+### data.py
+Chứa các import
+
+Setup data đầu vào, lọc dữ liệu và PCA
+
+'''python
+def setup_data():
+'''
+
+Load file lịch sử
+
+'''python
+def history():
+'''
+
+Object DATA chứ các hàm lọc dữ liệu và PCA
+
+'''python
+class DATA:
+'''
+
+### analysis.py
+Phân tích dữ liệu các giữa các lần dự đoán trong lịch sử
+
+### .history.csv
+Ghi lại lịch sử các lần dự đoán
 
 ### Other
 Chứa các file test cũ để tham khảo
@@ -20,7 +73,6 @@ Chứa các file test cũ để tham khảo
 Chứa file tham khảo về cách hồi quy tuyến tính
 
 ## Hiện tại
-- Bỏ qua hồi quy OLS do ít tính thực dụng
-- Chọn lọc lại dữ liệu đầu vào
+- Chọn lọc dữ liệu đầu vào
 - Tập trung tăng độ chính xác cho hồi quy tuyến tính
 - Đưa ra kết luận về PCA

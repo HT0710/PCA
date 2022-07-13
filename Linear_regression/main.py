@@ -2,7 +2,7 @@ from sklearn import linear_model
 from data import *
 
 data = load_data('cars.csv')
-print(data)
+# print(data)
 
 X = data[['Weight', 'Volume', 'CO2']].values
 y = data['Type'].values
@@ -16,4 +16,4 @@ predType = regr.predict([[900, 865, 90]])
 # Giá trị được dự đoán
 print(round(predType[0]))
 # Hệ số của giá trị dự đoán
-print(regr.coef_)
+# print(regr.coef_)

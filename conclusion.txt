@@ -1,0 +1,11 @@
+Kết luận sau khi PCA
+- PCA giúp tìm thành phần chính và giảm chiều dữ liệu. Tuy nhiên cũng có những mặc lợi và mặc hại.
+- Lợi là giảm được phần lớn dữ liệu, đặc biệt rất hiệu quả với những tập có kích thước rất lớn.
+ - Hại là ở phần ngược lại ít hiệu quả hơn đối với những tập dữ liệu nhỏ.
+ - Ngoài ra thành phần chính của tập dữ liệu đôi khi chênh lệch thấp giữa các PC làm cho việc PCA gần như không còn hiệu quả nữa hoặc vẫn giảm được dữ liệu nhưng hiệu quả thấp.
+
+Kết luận sau khi dự đoán bằng PCA
+-
+
+Tổng kết
+-
