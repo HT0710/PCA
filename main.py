@@ -85,6 +85,6 @@ if __name__ == "__main__":
     if his:
         history()
     if run_main:
-        for i in range(0, 10):
+        for i in range(0, 1):
             main()
     pass

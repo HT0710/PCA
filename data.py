@@ -17,7 +17,7 @@ def setup_data():
     pca_data = data.get_pca_data()
 
     # nearc4,educ,age,weight,step14,black,wage,enroll,KWW,IQ,married,libcrd14,exper,lwage,expersq
-    feature = ['nearc4', 'educ', 'age', 'weight', 'black', 'wage', 'IQ', 'lwage']
+    feature = ['nearc4', 'educ', 'age', 'black', 'wage', 'IQ', 'lwage']
     dataset = dataset.loc[:, feature]
 
     X = dataset.loc[:, dataset.columns != 'wage'].values
