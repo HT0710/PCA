@@ -35,7 +35,7 @@ def main():
 
 Lớp LR_PREDICT chứa các hàm dự đoán
 
-```pyhon
+```python
 class LR_PREDICT:
 ```
 
