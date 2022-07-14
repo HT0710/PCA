@@ -33,7 +33,7 @@ run_main = True
 def main():
 ```
 
-Object LR_PREDICT chứa các hàm dự đoán
+Lớp LR_PREDICT chứa các hàm dự đoán
 
 ```pyhon
 class LR_PREDICT:
@@ -54,7 +54,7 @@ Load file lịch sử
 def history():
 ```
 
-Object DATA chứ các hàm lọc dữ liệu và PCA
+Lớp DATA chứa các hàm lọc dữ liệu và PCA dữ liệu
 
 ```python
 class DATA:
