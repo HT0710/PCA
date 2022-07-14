@@ -7,7 +7,7 @@ https://github.com/HT0710/ML-From-Scratch.git
 - Repo chi tiết về PCA: 
 https://github.com/HT0710/dsc-performing-principal-component-analysis.git
 
-### main.py
+## main.py
 Setup data từ file data.py
 
 ```python
@@ -43,7 +43,7 @@ Object LR_PREDICT chứa các hàm dự đoán
 class LR_PREDICT:
 ```
 
-### data.py
+## data.py
 Chứa các import
 
 Setup data đầu vào, lọc dữ liệu và PCA
@@ -64,22 +64,22 @@ Object DATA chứ các hàm lọc dữ liệu và PCA
 class DATA:
 ```
 
-### .history.csv
+## .history.csv
 Ghi lại lịch sử các lần dự đoán
 
-### analysis.py
+## analysis.py
 Phân tích dữ liệu các giữa các lần dự đoán trong lịch sử
 
-### conclusion.txt
+## conclusion.txt
 Kết luận về quá trình làm dự án
 
-### Tệp ./Other
+## Tệp ./Other
 Chứa các file test cũ để tham khảo
 
-### Tệp ./Linear_regression
+## Tệp ./Linear_regression
 Chứa file tham khảo về cách hồi quy tuyến tính
 
-## Hiện tại
+# Hiện tại
 - Chọn lọc dữ liệu đầu vào
 - Tập trung tăng độ chính xác cho hồi quy tuyến tính
 - Đưa ra kết luận về PCA
