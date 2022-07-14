@@ -1,11 +1,7 @@
-# PCA
-Principal Components Analysis
-
-## Hướng dẫn
-- Repo về Machine Learning: 
-https://github.com/HT0710/ML-From-Scratch.git
-- Repo chi tiết về PCA: 
-https://github.com/HT0710/dsc-performing-principal-component-analysis.git
+# Mục tiêu
+- Tối ưu hóa
+- Tăng cường thử nghiệm
+- Đưa ra kết luận về PCA
 
 ## main.py
 Setup data từ file data.py
@@ -79,7 +75,8 @@ Chứa các file test cũ để tham khảo
 ## Tệp ./Linear_regression
 Chứa file tham khảo về cách hồi quy tuyến tính
 
-# Hiện tại
-- Chọn lọc dữ liệu đầu vào
-- Tập trung tăng độ chính xác cho hồi quy tuyến tính
-- Đưa ra kết luận về PCA
+# Liên kết khác
+- Repo về Machine Learning: 
+https://github.com/HT0710/ML-From-Scratch.git
+- Repo chi tiết về PCA: 
+https://github.com/HT0710/dsc-performing-principal-component-analysis.git
