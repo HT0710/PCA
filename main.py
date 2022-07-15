@@ -1,23 +1,34 @@
+import time
+
 from data import *
 
 X_train, X_test, X_pca_train, X_pca_test, y_train, y_test, feature = setup_data()
 LR = LinearRegression()
 
 
-# Số lượng dự đoán
-n = 15
+# Số giá trị dự đoán
+n = 100
+# Độ delay
+delay = 0.001
 # Ảnh
-plot = False
+plot = True
 # Lịch sử
 his = False
-# Thực thi hàm main
+# Số lần dự đoán
+loop = 1
+"""Lưu ý
+!!! loop = 10 nghĩa là lặp lại 10 lần dự đoán n !!!
+Tổng số lần dự đoán = n * loop
+Mỗi loop sẽ được lưu riêng vào history
+"""
+# Thực thi main
 run_main = True
 
 
 def main():
     id_list = []
     for i in range(n):
-        id_list.append(random.randint(0, X_test.shape[0]))
+        id_list.append(random.randint(0, X_test.shape[0]-1))
 
     print("  Before PCA")
     nor_predict = LR_PREDICT(X_train, X_test, y_train, y_test, id_list)
@@ -70,12 +81,13 @@ class LR_PREDICT:
         LR.fit(self.X_train, self.y_train)
         i = 0
         for id in self.id_list:
-            pred = round(LR.predict([self.X_test[id].tolist()])[0])
+            time.sleep(delay)
+            pred = LR.predict([self.X_test[id].tolist()]).round()[0]
             diff = round(abs(1 - (pred / self.y_test[id])) * 100, 1)
             self.all.append(diff)
             self.avr += diff
 
-            print(f"{i} | Predicted wage: {pred} | Diff: {diff}%")
+            print(f"{i} | Predicted: {pred} | Diff: {diff}%")
             i += 1
         print('-' * 40)
         self.avr = round(self.avr / len(self.id_list), 1)
@@ -85,6 +97,6 @@ if __name__ == "__main__":
     if his:
         history()
     if run_main:
-        for i in range(0, 1):
+        for i in range(0, loop):
             main()
     pass

@@ -1,5 +1,4 @@
 Sample,Before,After,Different,Feature
-
 15,11.9,23.6,11.7,nearc4 educ age black wage IQ lwage
 15,11.6,28.8,17.2,nearc4 educ age black wage IQ lwage
 15,7.7,28.2,20.5,nearc4 educ age black wage IQ lwage
@@ -50,7 +49,6 @@ Sample,Before,After,Different,Feature
 15,6.2,17.5,11.3,nearc4 educ age black wage IQ lwage
 15,7.4,16.1,8.7,nearc4 educ age black wage IQ lwage
 15,9.8,34.6,24.8,nearc4 educ age black wage IQ lwage
-
 15,14.3,50.3,36.0,nearc4 educ age weight black wage IQ lwage
 15,11.9,37.8,25.9,nearc4 educ age weight black wage IQ lwage
 15,15.6,33.8,18.2,nearc4 educ age weight black wage IQ lwage
@@ -95,3 +93,28 @@ Sample,Before,After,Different,Feature
 15,12.8,34.0,21.2,nearc4 educ age weight black wage IQ lwage
 15,10.8,32.4,21.6,nearc4 educ age weight black wage IQ lwage
 15,9.1,32.8,23.7,nearc4 educ age weight black wage IQ lwage
+15,7.4,26.5,19.1,nearc4 educ age black wage IQ lwage
+15,7.3,32.4,25.1,nearc4 educ black wage IQ lwage
+100,11.6,30.4,18.8,nearc4 educ black wage IQ lwage
+100,7.7,21.3,13.6,nearc4 educ age black wage IQ lwage
+100,7.5,25.7,18.2,nearc4 educ age black wage IQ lwage exper
+100,10.1,35.9,25.8,nearc4 educ black wage IQ lwage exper expersq
+20,8.1,31.7,23.6,nearc4 educ black wage IQ lwage exper expersq
+20,7.1,23.1,16.0,nearc4 educ black wage IQ lwage exper expersq
+20,6.4,23.3,16.9,nearc4 educ black wage IQ lwage exper expersq
+20,7.0,24.2,17.2,nearc4 educ black wage IQ lwage exper expersq
+100,9.5,28.9,19.4,nearc4 educ black wage IQ lwage exper expersq
+100,9.2,27.1,17.9,nearc4 educ black wage IQ lwage exper expersq
+100,10.5,31.6,21.1,nearc4 educ black wage IQ lwage exper expersq
+100,7.6,27.1,19.5,nearc4 educ black wage IQ lwage exper expersq
+100,8.5,28.4,19.9,nearc4 educ black wage IQ lwage exper expersq
+5,7.1,34.4,27.3,nearc4 educ black wage IQ lwage exper expersq
+5,3.2,34.4,31.2,nearc4 educ black wage IQ lwage exper expersq
+5,9.9,27.3,17.4,nearc4 educ black wage IQ lwage exper expersq
+5,24.0,54.5,30.5,nearc4 educ black wage IQ lwage exper expersq
+1000,9.8,29.4,19.6,nearc4 educ black wage IQ lwage exper expersq
+1000,10.2,29.6,19.4,nearc4 educ black wage IQ lwage exper expersq
+1000,9.9,29.5,19.6,nearc4 educ black wage IQ lwage exper expersq
+1000,9.8,29.0,19.2,nearc4 educ black wage IQ lwage
+1000,9.5,29.1,19.6,nearc4 educ age black wage IQ lwage
+1000,9.8,30.6,20.8,nearc4 educ age black wage IQ lwage

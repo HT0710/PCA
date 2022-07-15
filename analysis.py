@@ -2,8 +2,13 @@ import pandas as pd
 
 his = pd.read_csv('.history.csv')
 
-his = his[his['After'] <= 20]
+print(f"Mean before: {round(his['Before'].mean(), 2)}")
+print(f"Mean after: {round(his['After'].mean(), 2)}")
+
+print()
+his = his[his['After'] <= 25]
 his = his[his['Before'] <= 6]
 
 print(his.loc[:, his.columns != 'Feature'])
-print(his)
+print()
+print(his['Feature'])
