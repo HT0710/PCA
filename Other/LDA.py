@@ -8,7 +8,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 
 # Load data
-raw_data = pd.read_csv("../_Wage_data.csv")
+raw_data = pd.read_csv("../csv/_Wage_data.csv")
 # Drop row contain Blank or Null or NaN value
 raw_data = raw_data.dropna()
 # Reset index in dataset

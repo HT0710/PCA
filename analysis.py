@@ -1,6 +1,6 @@
 import pandas as pd
 
-his = pd.read_csv('.history.csv')
+his = pd.read_csv('csv/.history.csv')
 
 print(f"Mean before: {round(his['Before'].mean(), 2)}")
 print(f"Mean after: {round(his['After'].mean(), 2)}")
