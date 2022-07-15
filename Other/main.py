@@ -1,5 +1,5 @@
 import numpy as np
-from data import load_data
+from data import *
 from matplotlib import pyplot as plt, cm
 from sklearn import datasets
 from sklearn.decomposition import PCA
@@ -7,7 +7,8 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 
-dataset = load_data("../_Wage_data.csv")
+data = DATA("../csv/_Wage_data.csv")
+dataset = data.get_dataset()
 dataset = dataset.loc[:,
           ['nearc4', 'educ', 'age', 'black', 'wage', 'IQ', 'married', 'exper', 'lwage', 'expersq']].copy()
 
