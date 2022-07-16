@@ -1,10 +1,15 @@
+import random
 import time
+from matplotlib import pyplot as plt
+from sklearn.linear_model import LinearRegression
 
 from data import *
+from pca import train_test_pca
 
-X_train, X_test, X_pca_train, X_pca_test, y_train, y_test, feature = setup_data()
+X, y = setup_data("csv/_Wage_data.csv")
+X_train, X_test, y_train, y_test = train_test_data(X, y)
+X_pca_train, X_pca_test, y_train, y_test = train_test_pca(X, y)
 LR = LinearRegression()
-
 
 # Số giá trị dự đoán
 n = 100
@@ -12,15 +17,14 @@ n = 100
 delay = 0.001
 # Ảnh
 plot = True
-# Lịch sử
-his = False
 # Số lần dự đoán
 loop = 1
 """Lưu ý
 !!! loop = 10 nghĩa là lặp lại 10 lần dự đoán n !!!
 Tổng số lần dự đoán = n * loop
-Mỗi loop sẽ được lưu riêng vào history
+Mỗi lần loop đều sẽ được lưu vào history
 """
+
 # Thực thi main
 run_main = True
 
@@ -28,7 +32,7 @@ run_main = True
 def main():
     id_list = []
     for i in range(n):
-        id_list.append(random.randint(0, X_test.shape[0]-1))
+        id_list.append(random.randint(0, X_test.shape[0] - 1))
 
     print("  Before PCA")
     nor_predict = LR_PREDICT(X_train, X_test, y_train, y_test, id_list)
@@ -48,7 +52,7 @@ def main():
     diff = round(abs(pca_avr - nor_avr), 1)
     print(f"\nBefore vs After PCA: {diff}%\n")
 
-    with open('.history.csv', 'a') as h:
+    with open('csv/.history.csv', 'a') as h:
         h.write(f"{n},{nor_avr},{pca_avr},{diff},{' '.join(feature)}\n")
 
     if plot:
@@ -94,8 +98,6 @@ class LR_PREDICT:
 
 
 if __name__ == "__main__":
-    if his:
-        history()
     if run_main:
         for i in range(0, loop):
             main()
