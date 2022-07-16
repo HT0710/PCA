@@ -1,8 +1,7 @@
 ### Read this at [cool Website](https://ht0710.github.io/PCA/)
 # Mục tiêu
-- Tối ưu hóa
-- Tăng cường thử nghiệm
-- Đưa ra kết luận về PCA
+- No more
+- maybe :eyes:
 
 ## main.py
 Các hàm dự đoán
@@ -13,14 +12,14 @@ Các hàm xử lý dữ liệu
 ## pca.py
 Các hàm liên quan đến PCA
 
-## .history.csv
-Ghi lại lịch sử các lần dự đoán
-
 ## analysis.py
 Phân tích dữ liệu các giữa các lần dự đoán trong lịch sử
 
 ## conclusion.txt
 Kết luận về quá trình làm dự án (x.x)
+
+## Tệp csv
+Chứa tập data, lịch sử dự đoán
 
 ## Tệp ./Other
 Các file test cũ
