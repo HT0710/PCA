@@ -28,7 +28,7 @@ Các file test cũ
 Tham khảo về hồi quy tuyến tính
 
 # Liên kết khác
-- Repo về Machine Learning: 
-https://github.com/HT0710/ML-From-Scratch.git
-- Repo chi tiết về PCA: 
-https://github.com/HT0710/dsc-performing-principal-component-analysis.git
+- Repo về Machine Learning: [ML-From-Scratch](https://github.com/HT0710/ML-From-Scratch.git)
+- Repo chi tiết về PCA: [dsc-performing-principal-component-analysis](https://github.com/HT0710/dsc-performing-principal-component-analysis.git)
+- More about me?
+- [HT0710-ArtA](https://github.com/HT0710)
