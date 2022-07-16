@@ -53,7 +53,7 @@ def main():
     print(f"\nBefore vs After PCA: {diff}%\n")
 
     with open('csv/.history.csv', 'a') as h:
-        h.write(f"{n},{nor_avr},{pca_avr},{diff},{' '.join(feature)}\n")
+        h.write(f"{n},{nor_avr},{pca_avr},{diff},{' '.join(feature if loc_feature else '*')}\n")
 
     if plot:
         plt.plot(nor_predict.get_all())

@@ -2,8 +2,8 @@ import pandas as pd
 
 his = pd.read_csv('csv/.history.csv')
 
-print(f"Mean before: {round(his['Before'].mean(), 2)}")
-print(f"Mean after: {round(his['After'].mean(), 2)}")
+print(f"Mean before: {round(his['Before'].mean(), 1)}%")
+print(f"Mean after: {round(his['After'].mean(), 1)}%")
 
 print()
 his = his[his['After'] <= 25]

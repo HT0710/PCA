@@ -6,11 +6,14 @@ feature = ['nearc4', 'educ', 'age', 'black', 'wage', 'IQ', 'lwage']
 pred = 'wage'
 
 
+loc_feature = True
+
+
 def setup_data(file_name):
     data = DATA(file_name)
     dataset = data.load_data()
 
-    dataset = dataset.loc[:, feature]
+    dataset = dataset.loc[:, feature] if loc_feature else dataset
 
     X = dataset.loc[:, dataset.columns != pred].values
     y = dataset[pred].values
