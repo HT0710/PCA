@@ -1,65 +1,17 @@
-### Read this at cool Website: https://ht0710.github.io/PCA/
+### Read this at [cool Website](https://ht0710.github.io/PCA/)
 # Mục tiêu
 - Tối ưu hóa
 - Tăng cường thử nghiệm
 - Đưa ra kết luận về PCA
 
 ## main.py
-Setup data từ file data.py
-
-```python
-X_train, X_test, X_pca_train, X_pca_test, y_train, y_test, feature = setup_data()
-LR = LinearRegression()
-```
-
-Các lựa chọn để thực thi chương trình
-
-```python
-# Số lượng sample predict
-n = 10
-# Show Ảnh
-plot = False
-# Show lịch sử
-his = False
-# Thực thi main
-run_main = True
-```
-
-- Hàm main random id từ tập test, sau đó train 2 tập model thường và PCA, sau đó dùng id từ tập test random lúc đầu để dự đoán
-- Lưu vào lịch sử
-- Show ảnh nếu plot = True
-- data.py: `setup_data()` đầu vào cho main
-
-```python
-def main():
-```
-
-Lớp LR_PREDICT chứa các hàm dự đoán
-
-```python
-class LR_PREDICT:
-```
+Các hàm dự đoán
 
 ## data.py
-Chứa các import
+Các hàm xử lý dữ liệu
 
-Setup data đầu vào, lọc dữ liệu và PCA
-
-```python
-def setup_data():
-```
-
-Load file lịch sử
-
-```python
-def history():
-```
-
-Lớp DATA chứa các hàm lọc dữ liệu và PCA dữ liệu
-
-```python
-class DATA:
-```
+## pca.py
+Các hàm liên quan đến PCA
 
 ## .history.csv
 Ghi lại lịch sử các lần dự đoán
@@ -68,13 +20,13 @@ Ghi lại lịch sử các lần dự đoán
 Phân tích dữ liệu các giữa các lần dự đoán trong lịch sử
 
 ## conclusion.txt
-Kết luận về quá trình làm dự án
+Kết luận về quá trình làm dự án (x.x)
 
 ## Tệp ./Other
-Chứa các file test cũ để tham khảo
+Các file test cũ
 
 ## Tệp ./Linear_regression
-Chứa file tham khảo về cách hồi quy tuyến tính
+Tham khảo về hồi quy tuyến tính
 
 # Liên kết khác
 - Repo về Machine Learning: 
